@@ -1,10 +1,5 @@
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+  <UApp>
+    <NuxtPage />
+  </UApp>
 </template>
-<script setup lang="ts">
-const { result, loading, error } = useExampleQuery()
-  console.log(result, loading, error)
-</script>
