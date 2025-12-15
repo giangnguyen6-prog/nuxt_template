@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { todos, loadTodos, addTodo, toggleTodo, removeTodo } = useTodos();
+const { todos, loadTodos, addTodo, toggleTodo, removeTodo, updateTodo } = useTodos();
 
 onMounted(loadTodos);
 </script>
@@ -10,6 +10,6 @@ onMounted(loadTodos);
 
 		<TodoInput @add="addTodo" />
 
-		<TodoList :todos="todos" @toggle="toggleTodo" @remove="removeTodo" />
+		<TodoList :todos="todos" @toggle="toggleTodo" @remove="removeTodo" @update:title="({ id, title }) => updateTodo(id, { title })" />
 	</UContainer>
 </template>
